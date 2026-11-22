@@ -1,0 +1,123 @@
+/* BioLink Mini — Modern SaaS Design System Stylesheet */
+
+/* Global Smooth scrolling and base fixes */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-dark {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Feature Card Hover Effects */
+.feature-card {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+/* Live Preview Studio - Phone Themes */
+.theme-purple-glow {
+  background: linear-gradient(165deg, #1e1b4b 0%, #312e81 40%, #4c1d95 100%) !important;
+}
+
+.theme-ocean-deep {
+  background: linear-gradient(165deg, #082f49 0%, #0c4a6e 40%, #1e3a8a 100%) !important;
+}
+
+.theme-emerald-nature {
+  background: linear-gradient(165deg, #064e3b 0%, #065f46 45%, #047857 100%) !important;
+}
+
+.theme-sunset-minimal {
+  background: linear-gradient(165deg, #4c0519 0%, #881337 45%, #9a3412 100%) !important;
+}
+
+/* Active persona tab indicator */
+.active-persona {
+  background-color: #f5f3ff !important;
+  border-color: #8b5cf6 !important;
+  color: #6d28d9 !important;
+  box-shadow: 0 1px 3px rgba(139, 92, 246, 0.2);
+}
+
+/* FAQ Accordion Styling */
+.faq-item.active .faq-content {
+  display: block;
+}
+
+.faq-item.active .faq-toggle i {
+  transform: rotate(180deg);
+  color: #6366f1;
+}
+
+.faq-item.active {
+  border-color: #c7d2fe;
+  box-shadow: 0 4px 20px -2px rgba(99, 102, 241, 0.08);
+}
+
+/* Keyframes for soft pulsing elements */
+@keyframes floatY {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: floatY 5s ease-in-out infinite;
+}
+
+/* Ensure focus states are accessible */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
